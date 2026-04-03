@@ -1,4 +1,5 @@
 # TMDB CLI Tool
+Related roadmap project - [tmdb-cli](https://roadmap.sh/projects/tmdb-cli)
 
 <p align="center">
   <img src="https://img.shields.io/github/stars/1devill/tmdb_cli_tool?style=for-the-badge&color=yellow" />
