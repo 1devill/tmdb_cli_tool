@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/github/issues/1devill/tmdb_cli_tool?style=for-the-badge&color=blue" />
   <img src="https://img.shields.io/github/issues-pr/y1devill/tmdb_cli_tool?style=for-the-badge&color=orange" />
 </p>
-A simple command-line application that fetches and displays movie data from The Movie Database (TMDB) API in a pretry tabular format.
+A simple command-line application that fetches and displays movie data from The Movie Database (TMDB) API in a pretty tabular format.
 
 ## Features
 1. Filter by category (popular, top, upcoming, playing)
