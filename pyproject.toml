@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tmdb-app"
+version = "0.1.0"
+dependencies = [
+    "requests",
+    "python-dotenv"
+]
+
+[project.scripts]
+tmdb-app = "tmdb_app.main:main"
