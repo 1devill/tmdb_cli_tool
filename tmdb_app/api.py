@@ -6,10 +6,14 @@ dotenv.load_dotenv()
 
 class Api:
     def __init__(self):
-        self.base_url = os.getenv("BASE_API_URL")
-        self.api_key = os.getenv("API_KEY")
+        base_api_url = os.getenv("BASE_API_URL")
+        api_key = os.getenv("API_KEY")
+        if not api_key or not base_api_url:
+            raise EnvironmentError("API_KEY and BASE_API_URL must be set.")
+
+        self.base_url = base_api_url
+        self.api_key = api_key
         self.headers = {
-            'Content-Type': 'application/json',
             'Authorization': f'Bearer {self.api_key}'
         }
 

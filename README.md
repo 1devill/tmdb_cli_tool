@@ -56,7 +56,6 @@ tmdb-app --type=playing
 tmdb_app/
 ├── main.py          # CLI entry point
 ├── api.py           # API logic
-├── args_parser.py   # CLI argument parsing
 ├── endpoints.py     # API endpoints mapping
 └── formatter.py     # Response formatter
 ```

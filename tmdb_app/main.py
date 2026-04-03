@@ -1,15 +1,24 @@
+import argparse
+
 from tmdb_app.api import Api
-from tmdb_app.args_parser import ArgsParser
 from tmdb_app.endpoints import ENDPOINTS
 from tmdb_app.formatter import Formatter
+
+def create_table(formatter):
+    formatter.add_column("#", justify="right")
+    formatter.add_column("Title", style="cyan")
+    formatter.add_column("Year")
+    formatter.add_column("Rating", justify="right")
 
 
 def main():
     api = Api()
-    args_parser = ArgsParser(["--type"])
-    formatter = Formatter()
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--type', required=True)
+    formatter = Formatter("TMDB Movies")
+    create_table(formatter)
 
-    movie_type_arg = args_parser.get_args().type
+    movie_type_arg = parser.parse_args().type
     if movie_type_arg not in ENDPOINTS:
         print("Please specify one of type: popular, top, playing, upcoming")
         return
@@ -21,8 +30,9 @@ def main():
         return
 
     for i, movie in enumerate(results):
-        formatter.get_table().add_row(str(i), movie["title"], movie.get("release_date", "")[:4], str(movie.get("vote_average", "N/A")))
-        formatter.print_table()
+        formatter.add_row(str(i), movie["title"], movie.get("release_date", "")[:4], str(movie.get("vote_average", "N/A")))
+
+    formatter.print_table()
 
 if __name__ == "__main__":
     main()
